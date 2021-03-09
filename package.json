@@ -1,0 +1,24 @@
+{
+  "name": "beyond-the-border",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "npx node-sass -w scss/main.scss css/main.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dorotapindur/beyond-the-border.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dorotapindur/beyond-the-border/issues"
+  },
+  "homepage": "https://github.com/dorotapindur/beyond-the-border#readme",
+  "devDependencies": {
+    "node-sass": "^5.0.0"
+  }
+}
