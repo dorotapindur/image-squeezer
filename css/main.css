@@ -1,0 +1,53 @@
+@import url(../css/normalize.css);
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+body {
+  background: #cfcfcf;
+  padding: 10px; }
+
+section {
+  border: 1px solid #808080;
+  padding: 10px;
+  margin: 10px 0; }
+
+label {
+  display: block;
+  margin: 10px; }
+
+input {
+  border-radius: 5px;
+  cursor: pointer; }
+
+button {
+  margin: 10px;
+  border-radius: 5px; }
+
+.img {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background: black;
+  display: flex;
+  align-items: center;
+  margin: 20px; }
+  .img::after {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    content: '';
+    width: 300px;
+    height: 300px;
+    border: 2px solid lime;
+    border-radius: 50%;
+    z-index: 2; }
+
+.canvas-container {
+  margin: 20px;
+  display: none; }
+
+#transform-y {
+  transform: rotate(-90deg); }
