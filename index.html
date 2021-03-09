@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond the Border</title>
+    <meta name="description" content="CSS gradient and transparent border generator">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <main>
+        <h1 class="main-header">Beyond the Border</h1>
+        <p>gradient-border generator</p>
+        <section class="image-adjust">
+            <label for="photo">Wczytaj zdjęcie</label>
+            <input id="photo" type="file" name="photo" accept="image/*" />
+            <div class="img">
+                <img id="output" width="500" />
+            </div>
+            <label for="transform-x">squeeze X: </label>
+            <input id="transform-x" type="range" value="1" min="0" max="1" step="0.01" />
+            <p  class="transform-x-value">1</p>
+            <label for="transform-y">squeeze Y: </label>
+            <input id="transform-y" type="range" value="1" min="0" max="1" step="0.01" />
+            <p  class="transform-y-value">1</p>
+            <p class="new-dimensions"></p>
+            <a id="download" download="myImage.jpg" href="" >Download to myImage.jpg</a>
+            <div class="canvas-container">
+                <!--canvas-->
+            </div>
+        </section>
+    </main>
+    <script src="./index.js" type="text/javascript"></script>  
+</body>
+</html>
