@@ -13,10 +13,11 @@ body {
     background: $main-background;
     padding: 10px;
 }
-section {
+main {
     border: 1px solid $border;
     padding: 10px;
     margin: 10px 0;
+    position: relative;
 }
 label {
     display: block;
@@ -30,7 +31,15 @@ button {
     margin: 10px;
     border-radius: 5px;
 }
-.img {
+.workspace-cover {
+    position: absolute;
+    top: 200px;
+    left: 30px;
+    background: none;
+    border: 2px solid red;
+    z-index: 3;
+}
+.img-box {
     position: relative;
     width: 500px;
     height: 500px;
@@ -38,6 +47,15 @@ button {
     display: flex;
     align-items: center;
     margin: 20px;
+    &__mousefield {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 500px;
+        height: 500px;
+        background: none;
+        z-index: 3;
+    }
     &::before {
         position: absolute;
         top: 150px;

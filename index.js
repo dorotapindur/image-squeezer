@@ -24,6 +24,49 @@ const loadFile = function(event) {
     }) 
 };
 document.getElementById('photo').addEventListener('input', loadFile);
+
+const imgBox = document.querySelector('.img-box__mousefield');
+let isDragging = false;
+let startX = 0;
+let startY = 0;
+let stopX = 0;
+let stopY = 0;
+let mousedownCounter = 0;
+
+imgBox.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    console.log('mouse down');
+    mousedownCounter = mousedownCounter + 1;
+    if (mousedownCounter === 1) {
+        startX = e.offsetX;
+        startY = e.offsetY;
+    } else {
+        startX = e.offsetX - (stopX - startX);
+        startY = e.offsetY - (stopY - startY);
+    }
+});
+imgBox.addEventListener('mousemove', (e) => {
+    e.preventDefault();
+    if (isDragging) {  
+        newX = e.offsetX;
+        newY = e.offsetY;
+        transformX = newX - startX;
+        transformY = newY - startY;     
+        image.style.transform = `translate(${transformX}px, ${transformY}px)`;
+    }
+});
+
+imgBox.addEventListener('mouseup', (e) => {
+    console.log('mouse up!');
+    stopX = e.offsetX;
+    stopY = e.offsetY;
+    if (isDragging) {
+        isDragging = false;
+    } 
+});
+
+
+
 const transformXinput = document.getElementById('transform-x');
 const transformYinput = document.getElementById('transform-y');
 const newImageDimensions = document.querySelector('.new-dimensions');
