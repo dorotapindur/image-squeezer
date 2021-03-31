@@ -20,6 +20,9 @@ main {
     padding: 10px;
     margin: 10px 0;
     position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
 }
 label {
     display: block;
@@ -92,6 +95,11 @@ button {
         border-radius: 50%;
         z-index: 2;
     }
+}
+.squeeze-wrapper {
+    display: flex;
+    width: 500px;
+    justify-content: space-around;
 }
 .canvas-container {
     margin: 20px;

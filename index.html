@@ -18,15 +18,17 @@
             <div class="img-box__mousefield"></div>
             <img id="output" width="500" />
         </div>
-        <div class="x-containter">
-            <label for="transform-x">squeeze X: </label>
-            <input id="transform-x" type="range" value="1" min="0" max="1" step="0.01" />
-            <p  class="transform-x-value">1</p>
-        </div>
-        <div class="y-container">
-            <label for="transform-y">squeeze Y: </label>
-            <input id="transform-y" type="range" value="1" min="0" max="1" step="0.01" />
-            <p  class="transform-y-value">1</p>
+        <div class="squeeze-wrapper">
+            <div class="x-containter">
+                <label for="transform-x">squeeze X: </label>
+                <input id="transform-x" type="range" value="1" min="0" max="1" step="0.01" />
+                <p  class="transform-x-value">1</p>
+            </div>
+            <div class="y-container">
+                <label for="transform-y">squeeze Y: </label>
+                <input id="transform-y" type="range" value="1" min="0" max="1" step="0.01" />
+                <p  class="transform-y-value">1</p>
+            </div>
         </div>
         <p class="new-dimensions">new image dimensions: ...</p>
         <a id="download" download="myImage.jpg" href="">Pobierz zmodyfikowane zdjęcie</a>
