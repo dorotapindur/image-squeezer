@@ -22,16 +22,21 @@ main {
   flex-flow: column;
   align-items: center; }
 
-label {
-  display: block;
-  margin: 10px; }
-
 input {
   border-radius: 5px;
   cursor: pointer; }
 
+.photo-label {
+  width: 500px;
+  margin: 0 auto;
+  padding-left: 5px; }
+
 .photo-input {
-  width: 250px; }
+  display: block;
+  width: 500px;
+  margin: 10px auto;
+  background-color: #474747;
+  color: white; }
 
 button {
   margin: 10px;
@@ -48,14 +53,6 @@ button {
     text-align: center;
     font-size: 1.5rem; }
 
-.workspace-cover {
-  position: absolute;
-  top: 200px;
-  left: 30px;
-  background: none;
-  border: 2px solid red;
-  z-index: 3; }
-
 .img-box {
   position: relative;
   width: 500px;
@@ -63,7 +60,7 @@ button {
   background: black;
   display: flex;
   align-items: center;
-  margin: 20px; }
+  margin: 20px auto; }
   .img-box__mousefield {
     position: absolute;
     top: 0;
@@ -71,7 +68,8 @@ button {
     width: 500px;
     height: 500px;
     background: none;
-    z-index: 3; }
+    z-index: 3;
+    cursor: pointer; }
   .img-box::before {
     position: absolute;
     top: 150px;
