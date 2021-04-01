@@ -9,12 +9,14 @@ html {
 
 body {
   background: #cfcfcf;
-  padding: 10px; }
+  padding: 0;
+  margin: 0;
+  min-height: 100vh; }
 
 main {
   border: 1px solid #808080;
   padding: 10px;
-  margin: 10px 0;
+  margin: 10px;
   position: relative;
   display: flex;
   flex-flow: column;
@@ -28,6 +30,9 @@ input {
   border-radius: 5px;
   cursor: pointer; }
 
+.photo-input {
+  width: 250px; }
+
 button {
   margin: 10px;
   border-radius: 5px; }
@@ -38,7 +43,7 @@ button {
   padding: 0;
   font-size: 2rem; }
   .main-header__subtitle {
-    margin: 0;
+    margin: 0 0 30px;
     padding: 0;
     text-align: center;
     font-size: 1.5rem; }
@@ -91,7 +96,35 @@ button {
 .squeeze-wrapper {
   display: flex;
   width: 500px;
+  height: 150px;
   justify-content: space-around; }
+
+.x-squeeze, .y-squeeze {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 130px; }
+  .x-squeeze__label, .y-squeeze__label {
+    margin: 20px 0 0; }
+  .x-squeeze__value, .y-squeeze__value {
+    color: #00507e;
+    margin: 5px; }
+
+.y-squeeze {
+  position: relative; }
+  .y-squeeze__input {
+    position: absolute;
+    top: 70px;
+    right: -60px; }
+
+.download {
+  color: green; }
+  .download:visited {
+    color: green; }
+  .download:hover {
+    color: #80ce03; }
+  .download:active {
+    color: yellowgreen; }
 
 .canvas-container {
   margin: 20px;

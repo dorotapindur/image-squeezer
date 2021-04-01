@@ -79,8 +79,8 @@ function setDegrees() {
     canvasImageWidth = Math.floor(image.naturalWidth * transX);
     canvasImageHeight = Math.floor(image.naturalHeight * transY);
     newImageDimensions.innerHTML = `new image dimensions: ${canvasImageWidth} x ${canvasImageHeight}`;
-    document.querySelector('.transform-x-value').innerHTML = transX;
-    document.querySelector('.transform-y-value').innerHTML = transY;
+    document.querySelector('.x-squeeze__value').innerHTML = transX;
+    document.querySelector('.y-squeeze__value').innerHTML = transY;
     image.style.transform = `scaleX(${transX}) scaleY(${transY})`;
     drawImageOnCanvas();
 }

@@ -13,25 +13,25 @@
         <h1 class="main-header">image-squeezer</h1>
         <p class="main-header__subtitle">poprawiacz monet</p>
         <label for="photo">Wczytaj zdjęcie</label>
-        <input id="photo" type="file" name="photo"accept="image/*" />
+        <input class="photo-input" id="photo" type="file" name="photo" accept="image/*" />
         <div class="img-box">
             <div class="img-box__mousefield"></div>
             <img id="output" width="500" />
         </div>
         <div class="squeeze-wrapper">
-            <div class="x-containter">
-                <label for="transform-x">squeeze X: </label>
-                <input id="transform-x" type="range" value="1" min="0" max="1" step="0.01" />
-                <p  class="transform-x-value">1</p>
+            <div class="x-squeeze">
+                <label class="x-squeeze__label" for="transform-x">squeeze X: </label>
+                <p class="x-squeeze__value">1</p>
+                <input class="x-squeeze__input" id="transform-x" type="range" value="1" min="0" max="1" step="0.01" />
             </div>
-            <div class="y-container">
-                <label for="transform-y">squeeze Y: </label>
-                <input id="transform-y" type="range" value="1" min="0" max="1" step="0.01" />
-                <p  class="transform-y-value">1</p>
+            <div class="y-squeeze">
+                <label class="y-squeeze__label"  for="transform-y">squeeze Y: </label>
+                <p class="y-squeeze__value">1</p>
+                <input class="y-squeeze__input" id="transform-y" type="range" value="1" min="0" max="1" step="0.01" />
             </div>
         </div>
         <p class="new-dimensions">new image dimensions: ...</p>
-        <a id="download" download="myImage.jpg" href="">Pobierz zmodyfikowane zdjęcie</a>
+        <a class="download" id="download" download="myImage.jpg" href="">Pobierz zmodyfikowane zdjęcie</a>
         <div class="canvas-container">
             <!--canvas-->
         </div>
