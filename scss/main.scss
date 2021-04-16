@@ -61,7 +61,8 @@ button {
 .img-box {
     position: relative;
     width: 500px;
-    height: 500px;
+    min-height: 500px;
+    height: auto;
     background: black;
     display: flex;
     align-items: center;
@@ -124,9 +125,6 @@ button {
         position: absolute;
         top: 70px;
         right: -60px;
-    }
-    &__value {
-        
     }
 }
 .download {
