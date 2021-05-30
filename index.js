@@ -94,9 +94,8 @@ function dragImage() {
         } 
     });
 }
+
 dragImage();
-
-
 transformXinput.addEventListener('input', setTransformation);
 transformYinput.addEventListener('input', setTransformation);
 

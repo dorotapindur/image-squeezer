@@ -15,6 +15,7 @@ body {
 
 main {
   border: 1px solid #808080;
+  border-radius: 5px;
   padding: 10px;
   margin: 10px;
   position: relative;
@@ -58,7 +59,7 @@ button {
   width: 500px;
   min-height: 500px;
   height: auto;
-  background: black;
+  background: #cfcfcf;
   display: flex;
   align-items: center;
   margin: 20px auto; }
@@ -71,63 +72,59 @@ button {
     background: none;
     z-index: 3;
     cursor: pointer; }
-  .img-box::before {
-    position: absolute;
-    top: 150px;
-    left: 150px;
-    content: '';
-    width: 200px;
-    height: 200px;
-    border: 2px solid #88ff00;
-    border-radius: 50%;
-    z-index: 2; }
   .img-box::after {
     position: absolute;
-    top: 100px;
-    left: 100px;
+    top: 0;
+    left: 0;
     content: '';
-    width: 300px;
-    height: 300px;
-    border: 2px solid lime;
+    width: 500px;
+    height: 500px;
+    background-image: url("../circles.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid #006eff;
     border-radius: 50%;
     z-index: 2; }
 
 .squeeze-wrapper {
   display: flex;
   width: 500px;
-  height: 150px;
+  height: auto;
+  margin: 15px;
   justify-content: space-around; }
 
 .x-squeeze, .y-squeeze {
   display: flex;
   flex-flow: column;
   align-items: center;
-  width: 130px; }
+  width: 130px;
+  position: relative; }
   .x-squeeze__label, .y-squeeze__label {
     margin: 20px 0 0; }
   .x-squeeze__value, .y-squeeze__value {
-    color: #00507e;
+    color: #006eff;
     margin: 5px; }
 
-.y-squeeze {
-  position: relative; }
-  .y-squeeze__input {
-    position: absolute;
-    top: 70px;
-    right: -60px; }
+.y-squeeze__input {
+  transform: rotate(-90deg) translateY(60px); }
 
 .download {
-  color: green; }
+  background-color: #e6e6e6;
+  border: 1px #808080 solid;
+  border-radius: 5px;
+  padding: 5px;
+  color: #006eff;
+  transition: background-color .5s ease-in-out, color .5s ease-in-out; }
   .download:visited {
-    color: green; }
+    color: #006eff;
+    background: #e6e6e6; }
   .download:hover {
-    color: #80ce03; }
+    color: #4a99ff;
+    background-color: #414141; }
   .download:active {
-    color: yellowgreen; }
+    color: #96b9e7;
+    background-color: #006eff; }
 
 .canvas-container {
   margin: 20px;
   display: none; }
-
-#transform-y {
-  transform: rotate(-90deg); }

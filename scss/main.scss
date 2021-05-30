@@ -19,6 +19,7 @@ body {
 }
 main {
     border: 1px solid $border;
+    border-radius: 5px;
     padding: 10px;
     margin: 10px;
     position: relative;
@@ -39,7 +40,7 @@ input {
     display: block;
     width: 500px;
     margin: 10px auto;
-    background-color: rgb(71, 71, 71);
+    background-color: #474747;
     color: white;
 }
 button {
@@ -63,7 +64,7 @@ button {
     width: 500px;
     min-height: 500px;
     height: auto;
-    background: black;
+    background: $main-background;
     display: flex;
     align-items: center;
     margin: 20px auto;
@@ -77,25 +78,17 @@ button {
         z-index: 3;
         cursor: pointer;
     }
-    &::before {
-        position: absolute;
-        top: 150px;
-        left: 150px;
-        content: '';
-        width: 200px;
-        height: 200px;
-        border: 2px solid #88ff00;
-        border-radius: 50%;
-        z-index: 2;
-    }
     &::after {
         position: absolute;
-        top: 100px;
-        left: 100px;
+        top: 0;
+        left: 0;
         content: '';
-        width: 300px;
-        height: 300px;
-        border: 2px solid lime;
+        width: 500px;
+        height: 500px;
+        background-image: url('../circles.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 1px solid $circle-color;
         border-radius: 50%;
         z-index: 2;
     }
@@ -103,7 +96,8 @@ button {
 .squeeze-wrapper {
     display: flex;
     width: 500px;
-    height: 150px;
+    height: auto;
+    margin: 15px;
     justify-content: space-around;
 }
 .x-squeeze, .y-squeeze {
@@ -111,38 +105,39 @@ button {
     flex-flow: column;
     align-items: center;
     width: 130px;
+    position: relative;
     &__label {
         margin: 20px 0 0;
     }
     &__value {
-        color: rgb(0, 80, 126);
+        color: $circle-color;
         margin: 5px;
     }
 }
-.y-squeeze {
-    position: relative;
-    &__input {
-        position: absolute;
-        top: 70px;
-        right: -60px;
-    }
+.y-squeeze__input {
+    transform: rotate(-90deg) translateY(60px);
 }
 .download {
-    color: green;
+    background-color: $button;
+    border: 1px $border solid;
+    border-radius: 5px;
+    padding: 5px;
+    color: $circle-color;
+    transition: background-color .5s ease-in-out, color .5s ease-in-out;
     &:visited {
-        color: green;
+        color: $circle-color;
+        background: $button;
     }
     &:hover {
-        color: rgb(128, 206, 3);
+        color: $hover;
+        background-color: $dark;
     }
     &:active {
-        color: yellowgreen;
+        color: $active;
+        background-color: $circle-color;
     }
 }
 .canvas-container {
     margin: 20px;
     display: none;
-}
-#transform-y {
-    transform: rotate(-90deg);
 }
