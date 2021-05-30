@@ -33,47 +33,21 @@ let stopX = 0;
 let stopY = 0;
 let mousedownCounter = 0;
 
-imgBox.addEventListener('mousedown', (e) => {
-    isDragging = true;
-    console.log('mouse down');
-    mousedownCounter = mousedownCounter + 1;
-    if (mousedownCounter === 1) {
-        startX = e.offsetX;
-        startY = e.offsetY;
-    } else {
-        startX = e.offsetX - (stopX - startX);
-        startY = e.offsetY - (stopY - startY);
-    }
-});
-imgBox.addEventListener('mousemove', (e) => {
-    e.preventDefault();
-    if (isDragging) {  
-        newX = e.offsetX;
-        newY = e.offsetY;
-        transformX = newX - startX;
-        transformY = newY - startY;     
-        image.style.transform = `translate(${transformX}px, ${transformY}px)`;
-    }
-});
 
-imgBox.addEventListener('mouseup', (e) => {
-    console.log('mouse up!');
-    stopX = e.offsetX;
-    stopY = e.offsetY;
-    if (isDragging) {
-        isDragging = false;
-    } 
-});
 
 
 
 const transformXinput = document.getElementById('transform-x');
 const transformYinput = document.getElementById('transform-y');
 const newImageDimensions = document.querySelector('.new-dimensions');
+let transformX = 0;
+let transformY = 0;
+let transX = 1;
+let transY = 1;
 
-function setDegrees() {
-    const transX = transformXinput.value;
-    const transY = transformYinput.value;
+function setTransformation() {
+    transX = transformXinput.value;
+    transY = transformYinput.value;
     let imageWidth = Math.floor(image.width * transX);
     let imageHeight = Math.floor(image.height * transY);
     canvasImageWidth = Math.floor(image.naturalWidth * transX);
@@ -81,11 +55,50 @@ function setDegrees() {
     newImageDimensions.innerHTML = `new image dimensions: ${canvasImageWidth} x ${canvasImageHeight}`;
     document.querySelector('.x-squeeze__value').innerHTML = transX;
     document.querySelector('.y-squeeze__value').innerHTML = transY;
-    image.style.transform = `scaleX(${transX}) scaleY(${transY})`;
+    image.style.transform = `scaleX(${transX}) scaleY(${transY}) translate(${transformX}px, ${transformY}px)`;
     drawImageOnCanvas();
 }
-transformXinput.addEventListener('input', setDegrees);
-transformYinput.addEventListener('input', setDegrees);
+
+function dragImage() {
+    
+    imgBox.addEventListener('mousedown', (e) => {
+        setTransformation();
+        isDragging = true;
+        console.log('mouse down');
+        mousedownCounter = mousedownCounter + 1;
+        if (mousedownCounter === 1) {
+            startX = e.offsetX;
+            startY = e.offsetY;
+        } else {
+            startX = e.offsetX - (stopX - startX);
+            startY = e.offsetY - (stopY - startY);
+        }
+    });
+    imgBox.addEventListener('mousemove', (e) => {
+        
+        e.preventDefault();
+        if (isDragging) { 
+            newX = e.offsetX;
+            newY = e.offsetY;
+            transformX = newX - startX;
+            transformY = newY - startY;     
+            image.style.transform = `scaleX(${transX}) scaleY(${transY}) translate(${transformX}px, ${transformY}px)`;
+        }
+    });
+    imgBox.addEventListener('mouseup', (e) => {
+        console.log('mouse up!');
+        stopX = e.offsetX;
+        stopY = e.offsetY;
+        if (isDragging) {
+            isDragging = false;
+        } 
+    });
+}
+dragImage();
+
+
+transformXinput.addEventListener('input', setTransformation);
+transformYinput.addEventListener('input', setTransformation);
 
 function downloadImg() {
     const downloadedImage = canvas.toDataURL("image/jpg");
