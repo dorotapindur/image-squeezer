@@ -5,5 +5,5 @@ Simple app that allows you to correct pictures of coins. Upload your picture, dr
 
 Try it here: <https://dorotapindur.github.io/image-squeezer/>.
 
-![image-squeezer preview](./readme-picture)
+![image-squeezer preview](./readme-picture.jpg)
 
